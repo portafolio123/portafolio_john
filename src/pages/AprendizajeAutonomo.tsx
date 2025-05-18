@@ -1,6 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
-function AprendizajeAutonomo() {
+const AprendizajeAutonomo: React.FC = () => {
   return (
     <div
       className="min-h-screen bg-cover bg-center py-12"
@@ -10,89 +11,119 @@ function AprendizajeAutonomo() {
     >
       <div className="bg-black bg-opacity-60 min-h-screen">
         <div className="container mx-auto px-4 py-8">
-          <h1 className="text-5xl font-extrabold text-center text-white mb-12 animate-fadeIn">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl font-extrabold text-center text-white mb-12"
+          >
             Aprendizaje Autónomo
-          </h1>
+          </motion.h1>
 
-          {/* Investigación Formativa */}
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-12 animate-slideIn">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Investigación Formativa</h2>
+          {/* Marca Personal: Mikly */}
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="bg-white rounded-lg shadow-lg p-8 mb-8"
+          >
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Marca personal: Mikly</h2>
             <p className="text-gray-700 text-lg mb-6">
-              En esta sección se aborda la importancia de la investigación formativa como herramienta para el aprendizaje autónomo, 
-              permitiendo a los estudiantes desarrollar habilidades críticas y analíticas.
+              En el vibrante mundo del marketing gastronómico, la marca personal se revela como el condimento esencial que eleva un simple plato a una experiencia memorable, y para mí, "Mikly - Cocinando con amor" ha sido un viaje revelador en este sentido. Más allá de un logo o eslogan, se trata de inyectar autenticidad en cada creación, compartiendo la pasión y la historia que reside detrás de cada receta.
             </p>
-            <div className="border border-gray-300 rounded-lg overflow-hidden">
-              <iframe
-                src="/investigacion-formativa.pdf"
-                className="w-full h-64"
-                title="Investigación Formativa"
-              ></iframe>
+            <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden mb-6">
+              <iframe src="/Marca_Personal_Mikly.pdf" className="w-full h-full" title="Marca Personal Mikly"/>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Conceptos de Marketing */}
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-12 animate-slideIn animation-delay-200">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Conceptos de Marketing</h2>
+          {/* Marca de la feria */}
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+            className="bg-white rounded-lg shadow-lg p-8 mb-8"
+          >
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Marca de la feria: SanCloé</h2>
             <p className="text-gray-700 text-lg mb-6">
-              En esta sección se exploran los conceptos fundamentales del marketing, incluyendo su importancia en la creación de valor para los clientes y las empresas.
+              SanCloé nos enseñó a construir una marca de bebidas naturales que conecta con el público a través de una identidad visual atractiva y un mensaje claro de bienestar. Cada elemento, desde el logo hasta el eslogan, fue clave para diferenciarnos y comunicar nuestra propuesta de valor.
             </p>
-            <div className="border border-gray-300 rounded-lg overflow-hidden">
-              <iframe
-                src="/conceptos-marketing.pdf"
-                className="w-full h-64"
-                title="Conceptos de Marketing"
-              ></iframe>
+            <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden mb-6">
+              <iframe src="/SanCloéInformación_ marca.pdf" className="w-full h-full" title="SanCloé"/>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Satisfacción y Lealtad */}
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-12 animate-slideIn animation-delay-400">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Satisfacción y Lealtad</h2>
+          {/* Conceptualización de términos de marketing */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="bg-white rounded-lg shadow-lg p-8 mb-8"
+          >
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Conceptualización de términos de marketing</h2>
             <p className="text-gray-700 text-lg mb-6">
-              Esta sección aborda cómo medir y mejorar la satisfacción del cliente, así como estrategias para fomentar la lealtad a largo plazo.
+              Esta actividad me permitió ver que detrás de cada acción en marketing gastronómico hay conceptos clave que guían las decisiones: segmentación, posicionamiento, fidelización, e incluso cómo influye el eWOM en lo que comemos.
             </p>
-            <div className="border border-gray-300 rounded-lg overflow-hidden">
-              <iframe
-                src="/satisfaccion-lealtad.pdf"
-                className="w-full h-64"
-                title="Satisfacción y Lealtad"
-              ></iframe>
+            <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden mb-6">
+              <iframe src="/Conceptualización_de_términos_de_Marketing.pdf" className="w-full h-full" title="Conceptualización de Marketing"/>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Branding */}
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-12 animate-slideIn animation-delay-600">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Branding</h2>
+          {/* Investigación formativa */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="bg-white rounded-lg shadow-lg p-8 mb-8"
+          >
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Investigación formativa: Influencers y eWOM</h2>
             <p className="text-gray-700 text-lg mb-6">
-              En esta sección se estudian las estrategias de branding, incluyendo cómo construir y gestionar marcas fuertes en el mercado.
+              Este proyecto me enseñó que hoy, una opinión en redes puede valer más que una gran campaña publicitaria. Aprendí cómo los influencers y el eWOM transforman la forma en que las marcas gastronómicas conectan con sus clientes.
             </p>
-            <div className="border border-gray-300 rounded-lg overflow-hidden">
-              <iframe
-                src="/branding.pdf"
-                className="w-full h-64"
-                title="Branding"
-              ></iframe>
+            <div className="grid md:grid-cols-2 gap-8 mb-6">
+              <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden">
+                <iframe src="/Influencers_eWOMen_Diapositivas.pdf" className="w-full h-full" title="Influencers Diapositivas"/>
+              </div>
+              <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden">
+                <iframe src="/InfluencerseWOMMarketingColaborativo.pdf" className="w-full h-full" title="Influencers Documento"/>
+              </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Segmentación de Mercados */}
-          <div className="bg-white rounded-lg shadow-lg p-8 animate-slideIn animation-delay-800">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Segmentación de Mercados</h2>
+          {/* Restaurants and technology */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+            className="bg-white rounded-lg shadow-lg p-8 mb-8"
+          >
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Restaurants and technology</h2>
             <p className="text-gray-700 text-lg mb-6">
-              Esta sección se enfoca en la segmentación de mercados, identificando grupos de consumidores con necesidades similares para diseñar estrategias específicas.
+              Explorar la evolución tecnológica en los restaurantes me hizo ver que el marketing gastronómico también se cocina con datos, sistemas y automatización.
             </p>
-            <div className="border border-gray-300 rounded-lg overflow-hidden">
-              <iframe
-                src="/segmentacion-mercados.pdf"
-                className="w-full h-64"
-                title="Segmentación de Mercados"
-              ></iframe>
+            <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden mb-6">
+              <iframe src="/Restaurants_and_technology (2).pdf" className="w-full h-full" title="Restaurants and Technology"/>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Customer Satisfaction */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+            className="bg-white rounded-lg shadow-lg p-8"
+          >
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Modeling Customer Satisfaction</h2>
+            <p className="text-gray-700 text-lg mb-6">
+              Este análisis me ayudó a entender que el verdadero marketing gastronómico va más allá del sabor: se trata de emociones, ambiente y memorias que invitan a regresar.
+            </p>
+            <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden mb-6">
+              <iframe src="/modelling_customer.pdf" className="w-full h-full" title="Customer Satisfaction"/>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default AprendizajeAutonomo;

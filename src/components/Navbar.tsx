@@ -19,11 +19,13 @@ const Navbar: React.FC = () => {
   const moreLinks = [
     { path: '/aprendizaje-practico-experimental', label: 'Aprendizaje Práctico Experimental' },
     { path: '/aprendizaje-autonomo', label: 'Aprendizaje Autónomo' },
+    /*
     { path: '/fin-ciclo', label: 'Fin de Ciclo' },
     { path: '/aprendizaje-contacto-docente-2', label: 'Aprendizaje en Contacto con el Docente' },
     { path: '/aprendizaje-practico-experimental-2', label: 'Aprendizaje Práctico Experimental' },
     { path: '/aprendizaje-autonomo-2', label: 'Aprendizaje Autónomo' },
     { path: '/logros-alcanzados', label: 'Logros Alcanzados' },
+     */
     { path: '/gracias', label: 'Gracias' },
   ];
 

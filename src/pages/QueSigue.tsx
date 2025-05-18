@@ -6,14 +6,12 @@ const QueSigue: React.FC = () => {
     <div
       className="min-h-screen bg-cover bg-center py-12"
       style={{
-        backgroundImage: "url('https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+        backgroundImage: "url('https://images.pexels.com/photos/32049140/pexels-photo-32049140/free-photo-of-delicious-gourmet-salad-with-assorted-vegetables.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
       }}
     >
       <div className="bg-black bg-opacity-50 min-h-screen">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-extrabold text-center text-white mb-12">
-            ¿Qué sigue?
-          </h1>
+          
 
           <div className="max-w-4xl mx-auto">
             {/* Nueva sección de bienvenida */}
@@ -31,7 +29,7 @@ const QueSigue: React.FC = () => {
                 <img
                   src={docenteFoto}
                   alt="Foto del docente"
-                  className="rounded-full shadow-md w-40 h-40 object-cover mb-4"
+                  className="rounded-lg shadow-xl w-80 h-80 object-cover mb-4 hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <p className="text-gray-700 text-lg mb-2">
