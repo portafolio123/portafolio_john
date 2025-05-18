@@ -1,115 +1,139 @@
 import React, { useState } from 'react';
-import { Search, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const navigationItems = [
+  { path: '/', label: 'Inicio', icon: '🏠', color: 'bg-blue-500' },
+  { path: 'info-personal', label: 'Sobre Mí', icon: '👤', color: 'bg-purple-500' },
+  { path: 'info-asignatura', label: 'La Materia', icon: '📚', color: 'bg-green-500' },
+  { path: 'aprendizaje-contacto-docente', label: 'Con el Docente', icon: '👨‍🏫', color: 'bg-indigo-500' },
+  { path: 'aprendizaje-practico-experimental', label: 'Prácticas', icon: '💡', color: 'bg-red-500' },
+  { path: 'aprendizaje-autonomo', label: 'Mi Aprendizaje', icon: '🎓', color: 'bg-teal-500' },
+  { path: 'gracias', label: 'Gracias', icon: '🙏', color: 'bg-orange-500' }
+];
 
 const Navbar: React.FC = () => {
-  const [isMoreOpen, setIsMoreOpen] = useState(false);
-  const location = useLocation(); // Para detectar la ruta activa
-
-  const mainLinks = [
-    { path: '/', label: 'Página Principal' },
-    { path: '/listo', label: '¿Listo?' },
-    { path: '/informacion-personal', label: 'Información Personal' },
-    { path: '/que-sigue', label: '¿Qué sigue?' },
-    { path: '/informacion-asignatura', label: 'Información de la Asignatura' },
-    { path: '/medio-ciclo', label: 'Medio Ciclo' },
-    { path: '/aprendizaje-contacto-docente', label: 'Aprendizaje en Contacto con el Docente' },
-  ];
-
-  const moreLinks = [
-    { path: '/aprendizaje-practico-experimental', label: 'Aprendizaje Práctico Experimental' },
-    { path: '/aprendizaje-autonomo', label: 'Aprendizaje Autónomo' },
-    /*
-    { path: '/fin-ciclo', label: 'Fin de Ciclo' },
-    { path: '/aprendizaje-contacto-docente-2', label: 'Aprendizaje en Contacto con el Docente' },
-    { path: '/aprendizaje-practico-experimental-2', label: 'Aprendizaje Práctico Experimental' },
-    { path: '/aprendizaje-autonomo-2', label: 'Aprendizaje Autónomo' },
-    { path: '/logros-alcanzados', label: 'Logros Alcanzados' },
-     */
-    { path: '/gracias', label: 'Gracias' },
-  ];
-
-  const handleMoreLinkClick = () => {
-    setIsMoreOpen(false); // Cierra el menú desplegable al hacer clic en un enlace
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  
+  // Get current page index for navigation
+  const currentIndex = navigationItems.findIndex(item => item.path === location.pathname);
+  const prevPage = currentIndex > 0 ? navigationItems[currentIndex - 1] : null;
+  const nextPage = currentIndex < navigationItems.length - 1 ? navigationItems[currentIndex + 1] : null;
 
   return (
-    <nav className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50 animate-fadeIn">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center h-16">
-          {/* Logo */}
-          <div className="text-xl font-semibold text-gray-800">Portafolio</div>
-
-          {/* Main Links */}
-          <div className="hidden md:flex items-center space-x-4 ml-10">
-            {mainLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-                  location.pathname === link.path
-                    ? 'text-white bg-blue-500 shadow-md scale-105'
-                    : 'text-gray-700 hover:text-white hover:bg-blue-500 hover:shadow-md hover:scale-105'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-
-            {/* More Dropdown */}
-            <div className="relative">
-              <button
-                className="text-gray-700 hover:text-white hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium flex items-center transition-all duration-300"
-                onClick={() => setIsMoreOpen(!isMoreOpen)}
-              >
-                Más <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-
-              {isMoreOpen && (
-                <div className="absolute right-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 animate-slideDown">
-                  {moreLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white transition-all duration-300"
-                      onClick={handleMoreLinkClick}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Search Icon */}
-          <div className="ml-auto flex items-center">
-            <button className="p-1 rounded-full text-gray-500 hover:text-gray-900 focus:outline-none transition-all duration-300">
-              <Search className="h-5 w-5" />
-            </button>
-          </div>
-
-          {/* Mobile Menu Icon */}
-          <div className="md:hidden ml-4">
-            <button className="text-gray-500 hover:text-gray-900 focus:outline-none transition-all duration-300">
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+    <>
+      {/* Navegación Principal */}
+      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex items-center gap-6 z-50">
+        {/* Botón de menú central */}
+        <motion.button
+          className="w-12 h-12 rounded-full bg-blue-600 text-white shadow-lg
+                     flex items-center justify-center text-xl"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? '×' : '≡'}
+        </motion.button>
+        
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          whileHover={{ scale: 1.05 }}
+        >
+          {prevPage && (
+            <Link
+              to={prevPage.path}
+              className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md
+                       text-gray-800 hover:bg-white transition-all duration-300"
+            >
+              <ChevronLeft size={20} />
+            </Link>
+          )}
+          {nextPage && (
+            <Link
+              to={nextPage.path}
+              className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md
+                       text-gray-800 hover:bg-white transition-all duration-300"
+            >
+              <ChevronRight size={20} />
+            </Link>
+          )}
+        </motion.div>
       </div>
-    </nav>
+
+      {/* Menú circular */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 flex items-center justify-center"
+            onClick={() => setIsOpen(false)}
+          >
+            <motion.div
+              className="relative w-[500px] h-[500px]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {navigationItems.map((item, index) => {
+                const angle = (index * 360) / navigationItems.length;
+                const radius = 200; // Reduced radius
+                const x = Math.cos((angle * Math.PI) / 180) * radius;
+                const y = Math.sin((angle * Math.PI) / 180) * radius;
+
+                return (
+                  <motion.div
+                    key={item.path}
+                    initial={{ scale: 0, x: 0, y: 0 }}
+                    animate={{
+                      scale: 1,
+                      x: x,
+                      y: y,
+                    }}
+                    transition={{
+                      delay: index * 0.05,
+                      type: "spring",
+                      stiffness: 260,
+                      damping: 20,
+                    }}
+                    style={{
+                      position: 'absolute',
+                      left: '50%',
+                      top: '50%',
+                      transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
+                    }}
+                  >
+                    <Link
+                      to={item.path}
+                      className={`flex flex-col items-center justify-center w-20 h-20 rounded-full
+                                ${item.color} text-white shadow-lg transform transition-all
+                                hover:scale-110 hover:shadow-xl`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span className="text-xl mb-1">{item.icon}</span>
+                      <span className="text-[10px] text-center font-medium px-1">
+                        {item.label}
+                      </span>
+                      {location.pathname === item.path && (
+                        <motion.div
+                          layoutId="activeIndicator"
+                          className="absolute inset-0 border-2 border-white rounded-full"
+                          transition={{ duration: 0.3 }}
+                        />
+                      )}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Se eliminó el indicador de página actual */}
+    </>
   );
 };
 

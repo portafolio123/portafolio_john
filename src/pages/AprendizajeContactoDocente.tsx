@@ -107,13 +107,14 @@ const AprendizajeContactoDocente: React.FC = () => {
                 Este proyecto me enseñó que el marketing gastronómico no se trata solo de vender productos, sino de conectar con emociones, hábitos y aspiraciones. Aprendí cómo una marca puede hablar el mismo idioma que su público y convertirse en parte de su día a día.
               </p>
               <div className="w-full aspect-video rounded-lg overflow-hidden mb-8">
-                <video
-                  controls
-                  className="w-full h-full object-cover"
-                >
-                  <source src="/src/assets/images/video.mp4" type="video/mp4" />
-                  Tu navegador no soporta el elemento de video.
-                </video>
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/FXWUqQBH7yI"
+                  title="Revix: Nutre tu cuerpo"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
               <p className="text-xl text-gray-800 font-semibold mb-4">
                 ¿Te sorprendió lo que un simple batido puede lograr?
