@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import bonitaBananaImg from '../assets/images/bonita_banana.jpg'
+
 
 const AprendizajePracticoExperimental: React.FC = () => {
   return (
@@ -106,18 +108,33 @@ const AprendizajePracticoExperimental: React.FC = () => {
           >
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Investigación sobre Bonita Banana</h2>
             <p className="text-gray-700 text-lg mb-6">
-              Con esta investigación comprendí cómo una empresa tradicional del sector agrícola, 
-              como Bonita Banana, puede evolucionar y adaptarse a cada etapa del marketing, 
-              desde la producción masiva hasta la hiperpersonalización digital.
+              Con esta investigación comprendí cómo una empresa tradicional del sector agrícola, como Bonita Banana, puede evolucionar y adaptarse a cada etapa del marketing, desde la producción masiva hasta la hiperpersonalización digital. Aprendí que el marketing no es estático, sino que crece junto a las necesidades del consumidor y los avances tecnológicos.
             </p>
-            <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden mb-6">
-              <iframe src="/BonitaBanana.pdf" className="w-full h-full" title="Bonita Banana"/>
+
+            {/* Imagen animada */}
+            {/* Imagen en un frame pequeño que muestra todo */}
+            <div className="w-full h-[400px] border border-gray-300 rounded-lg overflow-auto mb-6 flex items-center justify-center bg-white">
+              <img
+                src={bonitaBananaImg}
+                alt="Bonita Banana"
+                className="max-w-full max-h-full object-contain"
+              />
             </div>
+
+            <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden mb-6">
+              <iframe 
+                src="/BonitaBanana.pdf" 
+                className="w-full h-full" 
+                title="Bonita Banana" 
+              />
+            </div>
+
             <p className="text-gray-700 text-lg italic">
               Este trabajo me dejó una lección clara: si una empresa quiere crecer, 
               debe evolucionar con su mercado. Y el marketing es el camino para lograrlo.
             </p>
           </motion.div>
+
 
           {/* Variables intervinientes del marketing */}
           <motion.div 
