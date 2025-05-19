@@ -36,11 +36,12 @@ const AprendizajePracticoExperimental: React.FC = () => {
             </p>
             <div className="grid md:grid-cols-2 gap-8 mb-6">
               <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden">
-                <iframe src="/Caso_starbucks.pdf" className="w-full h-full" title="Caso Starbucks"/>
-              </div>
-              <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden">
                 <iframe src="/Caso_Starbucks_Diapositivas.pdf" className="w-full h-full" title="Diapositivas Starbucks"/>
               </div>
+              <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden">
+                <iframe src="/Caso_starbucks.pdf" className="w-full h-full" title="Caso Starbucks"/>
+              </div>
+              
             </div>
             <p className="text-gray-700 text-lg italic">
               Y si una taza de café puede lograr tanto... imagina lo que podemos lograr con una buena estrategia gastronómica.
@@ -57,11 +58,13 @@ const AprendizajePracticoExperimental: React.FC = () => {
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Caso Crepes & Waffles</h2>
             <div className="grid md:grid-cols-2 gap-8 mb-6">
               <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden">
-                <iframe src="/AnálisisEstratégicodeCrepes&Waffles.pdf" className="w-full h-full" title="Análisis Crepes & Waffles"/>
-              </div>
-              <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden">
                 <iframe src="/CasoCrepesWaffles_Diapositivas.pdf" className="w-full h-full" title="Diapositivas Crepes & Waffles"/>
               </div>
+
+              <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden">
+                <iframe src="/AnálisisEstratégicodeCrepes&Waffles.pdf" className="w-full h-full" title="Análisis Crepes & Waffles"/>
+              </div>
+              
             </div>
             <p className="text-gray-700 text-lg italic">
               Esta investigación fue el mejor ejemplo de cómo el marketing gastronómico no se sirve en bandeja: 
@@ -83,8 +86,14 @@ const AprendizajePracticoExperimental: React.FC = () => {
               hasta el eslogan que promete una experiencia única, construimos una identidad que va más allá 
               de vender postres: vendemos emociones.
             </p>
-            <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden mb-6">
-              <iframe src="/Marca grupal.pdf" className="w-full h-full" title="Marca Grupal"/>
+            
+            <div className="grid md:grid-cols-2 gap-8 mb-6">
+              <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden">
+                <iframe src="/MARCA_GRUPAL_Bon Appetit.pdf" className="w-full h-full" title="Marca Grupal Bon Appetit"/>
+              </div>
+              <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden">
+                <iframe src="/Marca grupal.pdf" className="w-full h-full" title="Marca Grupal"/>
+              </div>
             </div>
           </motion.div>
 
