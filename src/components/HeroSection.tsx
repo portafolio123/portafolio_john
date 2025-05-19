@@ -7,8 +7,8 @@ const menuItems = [
   { path: '/info-asignatura', title: 'Información de la Materia', icon: '📚' },
   { path: '/que-sigue', title: '¿Qué Sigue?', icon: '🎯' },
   { path: '/medio-ciclo', title: 'Medio Ciclo', icon: '📝' },
-  { path: '/aprendizaje-contacto', title: 'Aprendizaje con Docente', icon: '👨‍🏫' },
-  { path: '/aprendizaje-practico', title: 'Aprendizaje Práctico', icon: '💡' },
+  { path: '/aprendizaje-contacto-docente', title: 'Aprendizaje con Docente', icon: '👨‍🏫' },
+  { path: '/aprendizaje-practico-experimental', title: 'Aprendizaje Práctico', icon: '💡' },
   { path: '/aprendizaje-autonomo', title: 'Aprendizaje Autónomo', icon: '🎓' },
   { path: '/gracias', title: 'Agradecimientos', icon: '🙏' },
 ];

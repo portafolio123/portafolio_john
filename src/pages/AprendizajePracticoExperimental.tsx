@@ -154,6 +154,22 @@ const AprendizajePracticoExperimental: React.FC = () => {
               emociones y valores del cliente actual.
             </p>
           </motion.div>
+          {/* Efectos_de_los_estímulos_sensoriales_en_la_preferencia_entre_comida_chatarra_y_comida tradicional */}
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+            className="bg-white rounded-lg shadow-lg p-8"
+          >
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Efectos de los estímulos sensoriales en la preferencia entre comida chatarra y comida tradicional</h2>
+            <div className="w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden mb-6">
+              <iframe src="/Efectos_de_los_estímulos_sensoriales_en_la_preferencia_entre_comida_chatarra_y_comida tradicional.pdf" className="w-full h-full" title="Efectos de los estímulos sensoriales en la preferencia entre comida chatarra y comida tradicional"/>
+            </div>
+            <p className="text-gray-700 text-lg">
+              Este avance del artículo revela cómo los estímulos sensoriales influyen en nuestras elecciones entre comida chatarra y tradicional, incluso en estudiantes de gastronomía. Realizar este estudio nos permitió comprender el poder del marketing sensorial y su impacto en la cultura alimentaria. Descubre más aprendizajes y reflexiones explorando el resto del portafolio.
+            </p>
+          </motion.div>
+          
         </div>
       </div>
     </div>
