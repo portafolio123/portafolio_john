@@ -49,6 +49,25 @@ const AprendizajeContactoDocente: React.FC = () => {
                 />
               </div>
             </motion.div>
+            {/* Sección Materia */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+              className="bg-white rounded-lg shadow-xl p-8"
+            >
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Apuntes importantes</h3>
+              <p className="text-gray-700 text-lg mb-6">
+                El marketing gastronómico no solo abre el apetito, también despierta estrategias, emociones y decisiones. Esta materia en clase nos dejó aprendizajes valiosos, curiosos y aplicables —una mezcla perfecta entre sabor y estrategia. Descubre cómo se cocina el éxito en la industria gastronómica, plato a plato. ¡Sigue leyendo!
+              </p>
+              <div className="w-full h-[600px] border border-gray-300 rounded-lg overflow-hidden">
+                <iframe
+                  src="/Datos_recopilados_en_clases.pdf"
+                  className="w-full h-full"
+                  title="Materia del medio ciclo"
+                />
+              </div>
+            </motion.div>
 
             {/* Sección Deberes */}
             <motion.div 
